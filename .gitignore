@@ -15,9 +15,3 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 
-# Cluster job logs
-cluster/logs/*
-!cluster/logs/.gitkeep
-
-# notebook parameter files written by the submit scripts
-cluster/nb_params_*.txt

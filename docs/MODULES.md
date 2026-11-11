@@ -311,7 +311,7 @@ Notebook 4 as reusable functions so that a large case can be split into independ
 | train_and_simulate(name, h, iterations, tol, window, sim_paths, seed, contracts) | train one policy on the saved lattice and simulate it; writes <policy>/history.csv, cuts.npz, sim.npz, q_star.npz, summary.json |
 | report(name) | collect the finished policies into summary.csv and the standard figures (convergence, storage and revenue, bound against h, distortion tilt) |
 
-scripts/run_experiment.py is the command-line front end (build / train / report); cluster/job.sh runs one step as an SGE job and cluster/submit_full.sh submits a build and one training job per policy with hold dependencies.
+scripts/run_experiment.py is the command-line front end (build / train / report); the train steps are independent and can run as separate jobs.
 
 
 ## scripts, tests and notebooks

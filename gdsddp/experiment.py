@@ -1,5 +1,5 @@
 """The experiment of notebook 4 as three reusable steps, so that a large run can be split into
-cluster jobs: BUILD the lattice once, TRAIN-AND-SIMULATE one policy per job, REPORT at the end.
+separate jobs: BUILD the lattice once, TRAIN-AND-SIMULATE one policy per job, REPORT at the end.
 
     python3 scripts/run_experiment.py build  --name full --T 102 --K 200 --paths 20000
     python3 scripts/run_experiment.py train  --name full --h 0            # risk neutral
@@ -180,7 +180,7 @@ def report(name: str, log=print) -> pd.DataFrame:
     ax.set_xlabel("SDDP iteration"); ax.set_ylabel("first-stage bound, M EUR"); ax.set_title("convergence"); ax.legend()
     fig.savefig(out / "fig_convergence.png", dpi=130, bbox_inches="tight"); plt.close(fig)
     fig, axes = plt.subplots(1, 3, figsize=(15, 3.4))
-    plots.storage_fan(sims, which=1, label="lower", ax=axes[0]); plots.storage_fan(sims, which=0, label="upper", ax=axes[1]); plots.revenue_hist(sims, ax=axes[2])
+    plots.storage_fan(sims, which=1, label="lower", ax=axes[0]); plots.storage_fan(sims, which=0, label="upper", ax=axes[1], legend=False); plots.revenue_hist(sims, ax=axes[2])
     fig.savefig(out / "fig_storage_revenue.png", dpi=130, bbox_inches="tight"); plt.close(fig)
     if len(table) > 1:
         fig, ax = plt.subplots(figsize=(5, 3.2))

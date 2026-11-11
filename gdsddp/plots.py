@@ -81,20 +81,22 @@ def convergence(policies: dict, ax=None):
     return ax
 
 
-def storage_fan(sims: dict, which: int = 1, label: str = "lower", ax=None):
+def storage_fan(sims: dict, which: int = 1, label: str = "lower", ax=None, legend: bool = True):
     """Median storage of a reservoir for each policy; the 10–90 % band is drawn for the first
     policy only (the bands of the policies overlap almost entirely, so one is enough to show
-    the spread across paths)."""
+    the spread across paths). The legend sits below the axes so it never covers the curves;
+    pass legend=False on the second reservoir panel, which uses the same colours."""
     ax = ax or plt.subplots(figsize=(7, 3.2))[1]
     for i, (name, sim) in enumerate(sims.items()):
         S = sim["storage"][:, :, which]
         col = INK if i == 0 else RAMP[min(3, i)]
         if i == 0:
             ax.fill_between(np.arange(S.shape[1]), np.quantile(S, 0.1, 0), np.quantile(S, 0.9, 0), color=RAMP[0], alpha=0.35, lw=0,
-                            label=f"10–90 % of paths ({name})")
-        ax.plot(np.median(S, 0), color=col, lw=1.8, label=f"median, {name}")
-    ax.set_xlabel("week"); ax.set_ylabel("storage, Mm³"); ax.set_title(f"{label} reservoir")
-    ax.legend(fontsize=8)
+                            label=f"10–90 % of paths, {name}")
+        ax.plot(np.median(S, 0), color=col, lw=1.8, label=name)
+    ax.set_xlabel("week"); ax.set_ylabel("storage, Mm³"); ax.set_title(f"{label} reservoir: median per policy")
+    if legend:
+        ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=2, fontsize=8, frameon=False)
     return ax
 
 
