@@ -71,7 +71,7 @@ class ContractSystem:
         return C / L
 
     def active(self, t: int) -> list[str]:
-        """Contracts not yet fully delivered at week t (0-based) — those with a martingale constraint."""
+        """Contracts not yet fully delivered at week t (0-based), i.e. those with a martingale constraint."""
         return [cid for cid in self.ids if t <= self.end0[cid]]
 
     def increments(self, t: int, m: int, succ_idx: np.ndarray):

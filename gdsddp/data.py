@@ -3,9 +3,9 @@
 Three inputs feed the pipeline:
   1. the Nord Pool SYSTEM day-ahead price (public; fetched from Energinet's open
      "Energi Data Service" which republishes it hourly, no key needed),
-  2. inflow per station of the Namsen watercourse (NTE / SINTEF, not public — a
+  2. inflow per station of the Namsen watercourse (NTE / SINTEF, not public; a
      synthetic sample with the same layout ships in data/sample/),
-  3. the Nasdaq Nordic power futures panel for the forward-curve PCA (licensed —
+  3. the Nasdaq Nordic power futures panel for the forward-curve PCA (licensed;
      a synthetic sample ships in data/sample/; see forwardcurve.py).
 """
 

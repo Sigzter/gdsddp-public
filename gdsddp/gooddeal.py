@@ -3,7 +3,7 @@
 Idea. A risk-neutral producer values next week's uncertain continuation value V(m')
 by its expectation under the physical probabilities delta. A good-deal bound instead
 takes the LOWEST expectation over all probability measures q that
-  (a) are "not too far" from delta — the chi-squared distance sum_m' q(m')^2/delta(m')
+  (a) are "not too far" from delta: the chi-squared distance sum_m' q(m')^2/delta(m')
       is bounded by 1 + h_w^2, where h_w = h / sqrt(52) is the weekly Sharpe-ratio bound
       (Cochrane & Saa-Requejo 2000: no measure in the set can turn any payoff into a
       Sharpe ratio above h per year), and
@@ -21,7 +21,7 @@ continuation values V and increments dF) is the convex QCQP
 which Gurobi solves directly. The martingale rows mean that the adversary cannot
 move probability along directions that the forwards span (price risk is hedgeable
 and therefore priced by the market, not by the producer's aversion); the remaining
-budget is spent on the directions the contracts do not reach — inflow. This is the
+budget is spent on the directions the contracts do not reach, mainly inflow. This is the
 separation principle of the thesis.
 
 The resulting q* replaces delta as the successor weights in the production LP of

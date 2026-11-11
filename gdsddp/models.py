@@ -1,6 +1,6 @@
 """Stochastic models: the spot price and the two reservoir inflows.
 
-PRICE — Schwartz & Smith (2000) two-factor model, written additively in EUR/MWh
+PRICE: Schwartz & Smith (2000) two-factor model, written additively in EUR/MWh
 and in weekly steps (as in the project thesis, section 5.2.1):
 
     P_t   = xi_t + chi_t + s(w_t)                       spot price in week t
@@ -13,7 +13,7 @@ The two innovations are independent standard normals. The parameters
 notebooks/03_forward_curve_pca.ipynb; the season (A, w0) and the starting level
 xi_0 from the spot history in notebooks/01_price_data_api.ipynb.
 
-INFLOW — one periodic AR(1) per reservoir on the log of the weekly inflow
+INFLOW: one periodic AR(1) per reservoir on the log of the weekly inflow
 (section 5.2.2 of the thesis, extended to two reservoirs):
 
     log I_{r,t} = mu_{r,w} + phi_{r,w} * log I_{r,t-1} + sigma_{r,w} * e_{r,t},   r in {upper, lower}

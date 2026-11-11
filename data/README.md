@@ -5,8 +5,8 @@ and must be placed in `data/raw/` (git-ignored) by whoever has access to them.
 
 | input | real source | file expected in `data/raw/` | sample in `data/sample/` |
 |---|---|---|---|
-| Nord Pool **system price**, hourly | public: Energinet "Energi Data Service", dataset `Elspotprices`, price area `SYSTEM` (free, no key; fetched by notebook 1 and cached) | `system_price_hourly.csv` (`date, price_eur_mwh`) — written by the notebook | `system_price_daily.csv` |
-| **inflow** per station of the Namsen watercourse, m³/s hourly 1958–2025 | NTE / SINTEF RenewHydro dataset (Kong et al. 2025), delivered under agreement — not public | `Historical_inflow.csv` (`date, Namsvatn, Vekteren, Limingen, Tunnsjø, Tunnsjøflyene, ...`) | `inflow_daily.csv` (same columns, daily) |
+| Nord Pool **system price**, hourly | public: Energinet "Energi Data Service", dataset `Elspotprices`, price area `SYSTEM` (free, no key; fetched by notebook 1 and cached) | `system_price_hourly.csv` (`date, price_eur_mwh`), written by the notebook | `system_price_daily.csv` |
+| **inflow** per station of the Namsen watercourse, m³/s hourly 1958–2025 | NTE / SINTEF RenewHydro dataset (Kong et al. 2025), delivered under agreement, not public | `Historical_inflow.csv` (`date, Namsvatn, Vekteren, Limingen, Tunnsjø, Tunnsjøflyene, ...`) | `inflow_daily.csv` (same columns, daily) |
 | **futures panel**: daily settlement prices of Nordic power week/month/quarter/year contracts 2014–2024 | Nasdaq end-of-day data (licensed) | `nordic_power_eod_2014_2024.csv.gz` (`date, main_category, instr_type, series, expire, closing_price, ...`) | `forward_panel.csv` (same columns, subset) |
 
 The loaders accept any regular time step for the flow and price files (they aggregate to weeks), so a daily sample and

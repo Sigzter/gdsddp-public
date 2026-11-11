@@ -1,4 +1,4 @@
-"""gdsddp — good-deal bounds inside SDDP for a two-reservoir hydropower cascade.
+"""gdsddp: good-deal bounds inside SDDP for a two-reservoir hydropower cascade.
 
 A deliberately small, single-threaded reference implementation of the method in
 Berthet & Tveit (2026), "Good-deal bounds in SDDP for medium-term hydropower
