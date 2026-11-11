@@ -65,8 +65,6 @@ notebooks/
 scripts/
   make_sample_data.py      regenerates data/sample/ from the models with known parameters
   run_experiment.py        build | train | report, for runs too large for the notebook
-docs/
-  MODULES.md, MODULES.pdf  reference of every module, function and class
 data/
   README.md                data sources, expected raw files, physical constants
   sample/                  synthetic inputs (committed)
