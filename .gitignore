@@ -1,0 +1,23 @@
+# Raw inputs are proprietary / licensed (NTE inflow, Nasdaq futures panel) or large API caches: never committed.
+data/raw/*
+!data/raw/.gitkeep
+
+# Everything derived from the raw data stays local as well (parameters, weekly series).
+data/processed/*
+!data/processed/.gitkeep
+
+# Run outputs
+results/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Cluster job logs
+cluster/logs/*
+!cluster/logs/.gitkeep
+
+# notebook parameter files written by the submit scripts
+cluster/nb_params_*.txt
